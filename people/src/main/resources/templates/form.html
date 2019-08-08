@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<!--    <form action="/demo/add">
+        <input type="text" placeholder="podaj imie" name="name">
+        <input type="text" placeholder="podaj email" name="email">
+        <input type="submit" value="press">
+    </form>
+-->
+    <form th:object="${user}"
+          th:action="@{/users}"
+          th:method="post">
+        <!-- th:action   --   action="/users" -->
+        <!-- th:value    --   action="/users" -->
+        <label>Name:</label>
+        <input type="text" th:field="*{name}">
+        <label>Email:</label>
+        <input type="text" th:field="*{email}">
+        <input type="submit" value="submit">
+        <input type="hidden" th:field="*{id}">
+    </form>
+
+
+
+
+</div>
+
+
+</body>
+</html>
